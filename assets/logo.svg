@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f2044"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#142a52"/>
+      <stop offset="100%" stop-color="#10b5a6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer hexagon (border) -->
+  <polygon points="256,18 466,136 466,376 256,494 46,376 46,136" fill="url(#g)"/>
+
+  <!-- Inner hexagon (white fill) -->
+  <polygon points="256,50 438,153 438,359 256,462 74,359 74,153" fill="#ffffff"/>
+
+  <!-- S letter - circuit trace style -->
+  <path d="M 230,158 H 152 a 18,18 0 0 0 -18,18 v 44 a 18,18 0 0 0 18,18 h 78 a 18,18 0 0 1 18,18 v 44 a 18,18 0 0 1 -18,18 H 152"
+        fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- T letter - circuit trace style -->
+  <path d="M 282,158 H 392" fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round"/>
+  <path d="M 337,158 V 318" fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Primary circuit nodes (large, at letter endpoints) -->
+  <circle cx="230" cy="158" r="10" fill="url(#g)"/>
+  <circle cx="152" cy="318" r="10" fill="url(#g)"/>
+  <circle cx="282" cy="158" r="10" fill="url(#g)"/>
+  <circle cx="392" cy="158" r="10" fill="url(#g)"/>
+  <circle cx="337" cy="318" r="10" fill="url(#g)"/>
+  <circle cx="337" cy="158" r="10" fill="url(#g)"/>
+
+  <!-- Decorative traces extending from S -->
+  <path d="M 152,158 L 152,138 L 124,138" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="124" cy="138" r="6" fill="url(#g2)"/>
+  <path d="M 152,318 L 130,340" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="130" cy="340" r="6" fill="url(#g2)"/>
+  <path d="M 134,238 L 114,238 L 114,258" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="114" cy="258" r="6" fill="url(#g2)"/>
+
+  <!-- Decorative traces extending from T -->
+  <path d="M 392,158 L 412,138" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="412" cy="138" r="6" fill="url(#g2)"/>
+  <path d="M 337,318 L 337,348 L 367,348" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="367" cy="348" r="6" fill="url(#g2)"/>
+  <path d="M 392,158 L 392,188" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="392" cy="188" r="6" fill="url(#g2)"/>
+
+  <!-- Extra floating circuit nodes for atmosphere -->
+  <path d="M 256,370 L 256,390" fill="none" stroke="url(#g2)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="256" cy="390" r="5" fill="url(#g2)"/>
+  <path d="M 256,120 L 256,108" fill="none" stroke="url(#g2)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="256" cy="108" r="5" fill="url(#g2)"/>
+</svg>

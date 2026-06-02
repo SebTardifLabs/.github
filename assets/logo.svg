@@ -15,6 +15,9 @@
     </filter>
   </defs>
 
+  <!-- Background fill matching darkest gradient color -->
+  <rect width="512" height="512" fill="#060e1a"/>
+
   <!-- Dark hex -->
   <polygon points="256,14 468,135 468,377 256,498 44,377 44,135" fill="url(#gH)"/>
 

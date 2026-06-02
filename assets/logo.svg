@@ -1,56 +1,102 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0f2044"/>
+    <linearGradient id="gH" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#060e1a"/>
+      <stop offset="40%" stop-color="#0c2848"/>
       <stop offset="100%" stop-color="#0d9488"/>
     </linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#142a52"/>
-      <stop offset="100%" stop-color="#10b5a6"/>
+    <linearGradient id="gH2" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#14dfc9"/>
     </linearGradient>
+    <filter id="gl2">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
-  <!-- Outer hexagon (border) -->
-  <polygon points="256,18 466,136 466,376 256,494 46,376 46,136" fill="url(#g)"/>
+  <!-- Dark hex -->
+  <polygon points="256,14 468,135 468,377 256,498 44,377 44,135" fill="url(#gH)"/>
 
-  <!-- Inner hexagon (white fill) -->
-  <polygon points="256,50 438,153 438,359 256,462 74,359 74,153" fill="#ffffff"/>
+  <!-- Subtle inner hex -->
+  <polygon points="256,48 440,153 440,359 256,464 72,359 72,153"
+           fill="none" stroke="url(#gH2)" stroke-width="1.5" opacity="0.15"/>
 
-  <!-- S letter - circuit trace style -->
-  <path d="M 230,158 H 152 a 18,18 0 0 0 -18,18 v 44 a 18,18 0 0 0 18,18 h 78 a 18,18 0 0 1 18,18 v 44 a 18,18 0 0 1 -18,18 H 152"
-        fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- S - glow layers -->
+  <path d="M 222,155 C 192,155 160,155 160,155 C 126,155 110,174 110,200 L 110,214 C 110,240 126,258 160,258 L 222,258 C 254,258 270,278 270,304 L 270,318 C 270,344 254,362 222,362 L 160,362"
+        fill="none" stroke="url(#gH2)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" opacity="0.1"/>
+  <path d="M 222,155 C 192,155 160,155 160,155 C 126,155 110,174 110,200 L 110,214 C 110,240 126,258 160,258 L 222,258 C 254,258 270,278 270,304 L 270,318 C 270,344 254,362 222,362 L 160,362"
+        fill="none" stroke="url(#gH2)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+  <path d="M 222,155 C 192,155 160,155 160,155 C 126,155 110,174 110,200 L 110,214 C 110,240 126,258 160,258 L 222,258 C 254,258 270,278 270,304 L 270,318 C 270,344 254,362 222,362 L 160,362"
+        fill="none" stroke="url(#gH2)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl2)"/>
 
-  <!-- T letter - circuit trace style -->
-  <path d="M 282,158 H 392" fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round"/>
-  <path d="M 337,158 V 318" fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round"/>
+  <!-- T - glow layers -->
+  <line x1="292" y1="155" x2="404" y2="155" stroke="url(#gH2)" stroke-width="44" stroke-linecap="round" opacity="0.1"/>
+  <line x1="348" y1="155" x2="348" y2="362" stroke="url(#gH2)" stroke-width="44" stroke-linecap="round" opacity="0.1"/>
+  <line x1="292" y1="155" x2="404" y2="155" stroke="url(#gH2)" stroke-width="22" stroke-linecap="round" opacity="0.3"/>
+  <line x1="348" y1="155" x2="348" y2="362" stroke="url(#gH2)" stroke-width="22" stroke-linecap="round" opacity="0.3"/>
+  <line x1="292" y1="155" x2="404" y2="155" stroke="url(#gH2)" stroke-width="8" stroke-linecap="round" filter="url(#gl2)"/>
+  <line x1="348" y1="155" x2="348" y2="362" stroke="url(#gH2)" stroke-width="8" stroke-linecap="round" filter="url(#gl2)"/>
 
-  <!-- Primary circuit nodes (large, at letter endpoints) -->
-  <circle cx="230" cy="158" r="10" fill="url(#g)"/>
-  <circle cx="152" cy="318" r="10" fill="url(#g)"/>
-  <circle cx="282" cy="158" r="10" fill="url(#g)"/>
-  <circle cx="392" cy="158" r="10" fill="url(#g)"/>
-  <circle cx="337" cy="318" r="10" fill="url(#g)"/>
-  <circle cx="337" cy="158" r="10" fill="url(#g)"/>
+  <!-- BOLD circuit branches (all 6-8px, nodes 9-12px) -->
 
-  <!-- Decorative traces extending from S -->
-  <path d="M 152,158 L 152,138 L 124,138" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="124" cy="138" r="6" fill="url(#g2)"/>
-  <path d="M 152,318 L 130,340" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="130" cy="340" r="6" fill="url(#g2)"/>
-  <path d="M 134,238 L 114,238 L 114,258" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="114" cy="258" r="6" fill="url(#g2)"/>
+  <!-- S top-left -->
+  <path d="M 160,155 L 126,118 L 86,118" fill="none" stroke="url(#gH2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl2)"/>
+  <circle cx="86" cy="118" r="10" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="86" cy="118" r="5" fill="#ffffff"/>
 
-  <!-- Decorative traces extending from T -->
-  <path d="M 392,158 L 412,138" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="412" cy="138" r="6" fill="url(#g2)"/>
-  <path d="M 337,318 L 337,348 L 367,348" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="367" cy="348" r="6" fill="url(#g2)"/>
-  <path d="M 392,158 L 392,188" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="392" cy="188" r="6" fill="url(#g2)"/>
+  <!-- S top-right -->
+  <path d="M 222,155 L 248,124 L 248,94" fill="none" stroke="url(#gH2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl2)"/>
+  <circle cx="248" cy="94" r="10" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="248" cy="94" r="5" fill="#ffffff"/>
 
-  <!-- Extra floating circuit nodes for atmosphere -->
-  <path d="M 256,370 L 256,390" fill="none" stroke="url(#g2)" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="256" cy="390" r="5" fill="url(#g2)"/>
-  <path d="M 256,120 L 256,108" fill="none" stroke="url(#g2)" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="256" cy="108" r="5" fill="url(#g2)"/>
+  <!-- S left mid -->
+  <path d="M 110,214 L 76,214 L 76,252" fill="none" stroke="url(#gH2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="76" cy="252" r="9" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="76" cy="252" r="4.5" fill="#ffffff"/>
+
+  <!-- S middle right -->
+  <path d="M 270,304 L 296,304 L 296,274" fill="none" stroke="url(#gH2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="296" cy="274" r="9" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="296" cy="274" r="4.5" fill="#ffffff"/>
+
+  <!-- S bottom-left -->
+  <path d="M 160,362 L 126,400 L 86,400" fill="none" stroke="url(#gH2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl2)"/>
+  <circle cx="86" cy="400" r="10" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="86" cy="400" r="5" fill="#ffffff"/>
+
+  <!-- S bottom-right -->
+  <path d="M 222,362 L 248,394" fill="none" stroke="url(#gH2)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="248" cy="394" r="9" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="248" cy="394" r="4.5" fill="#ffffff"/>
+
+  <!-- T top-right -->
+  <path d="M 404,155 L 434,122 L 434,92" fill="none" stroke="url(#gH2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl2)"/>
+  <circle cx="434" cy="92" r="10" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="434" cy="92" r="5" fill="#ffffff"/>
+
+  <!-- T top-left -->
+  <path d="M 292,155 L 268,124" fill="none" stroke="url(#gH2)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="268" cy="124" r="9" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="268" cy="124" r="4.5" fill="#ffffff"/>
+
+  <!-- T right upper -->
+  <path d="M 370,218 L 410,218 L 430,194" fill="none" stroke="url(#gH2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="430" cy="194" r="9" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="430" cy="194" r="4.5" fill="#ffffff"/>
+
+  <!-- T right lower -->
+  <path d="M 370,302 L 414,302 L 414,334" fill="none" stroke="url(#gH2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="414" cy="334" r="9" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="414" cy="334" r="4.5" fill="#ffffff"/>
+
+  <!-- T bottom -->
+  <path d="M 348,362 L 348,400 L 392,400" fill="none" stroke="url(#gH2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl2)"/>
+  <circle cx="392" cy="400" r="10" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="392" cy="400" r="5" fill="#ffffff"/>
+
+  <!-- T left -->
+  <path d="M 326,258 L 304,258" fill="none" stroke="url(#gH2)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="304" cy="258" r="9" fill="url(#gH2)" opacity="0.7"/>
+  <circle cx="304" cy="258" r="4.5" fill="#ffffff"/>
 </svg>
